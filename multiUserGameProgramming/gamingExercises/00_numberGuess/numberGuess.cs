@@ -1,4 +1,4 @@
-// Amos Rains, Number Guess, v0.3
+// Amos Rains, Number Guess, v0.4
 /*
 Generate scecret number from a defined range of numbers (i.e. 0-10, 0-50, 0-100)
 Print game instructions inculding range and num. of guesses allowed.
