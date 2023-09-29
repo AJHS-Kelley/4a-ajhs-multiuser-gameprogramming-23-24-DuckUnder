@@ -54,12 +54,10 @@ namespace numberGuess
                 rangeMin = 0;
                 rangeMax = 10;
                 numberGuesses = 4;
-
             } else if (difficulty == "Normal Numby") {
                 rangeMin = 0;
                 rangeMax = 25;
-                numberGuesses = 3;
- 
+                numberGuesses = 3; 
             } else if (difficulty == "Hard Numby") {
                 rangeMin = 0;
                 rangeMax = 50;
@@ -104,13 +102,11 @@ namespace numberGuess
                             Console.WriteLine("NADA! Your are wrong Senor or senorita. It is to Low! LOL!");
                         }
                         numAttempts++;
-                    }
-                    if (playerGuess != scecretNumber) {
-                        Console.WriteLine("TO MANY GUESSES! Numby Wins this round! WOOOOO!!");
-                        cpuScore++; 
-                    }
-
-
+                    }          
+                }
+                if (playerGuess != scecretNumber) {
+                    Console.WriteLine("TO MANY GUESSES! Numby Wins this round! WOOOOO!!");
+                    cpuScore++; 
                 }
 
             }
