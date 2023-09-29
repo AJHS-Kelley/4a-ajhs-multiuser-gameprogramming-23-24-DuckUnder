@@ -1,4 +1,4 @@
-// Amos Rains, Number Guess, v0.2
+// Amos Rains, Number Guess, v0.3
 /*
 Generate scecret number from a defined range of numbers (i.e. 0-10, 0-50, 0-100)
 Print game instructions inculding range and num. of guesses allowed.
@@ -35,6 +35,7 @@ namespace numberGuess
             int scecretNumber = -1;
             int numberGuesses = 0; // Number of guesses player is ALLOWED.
             int numAttempts = 0; // Number of guesses TAKEN. 
+            int playerGuess = 0;
             int playerScore = 0;
             int cpuScore = 0;
             string difficulty = "";
@@ -74,7 +75,51 @@ namespace numberGuess
             }
             Console.WriteLine("Minimum: " + rangeMin);
             Console.WriteLine("Maximum: " + rangeMax);
-            Console.WriteLine("Num. Guesses: " + numberGuesses);
+            Console.WriteLine("Num. Guesses: " + numberGuesses); 
+
+            // Start Match!
+            while (playerScore != 3 && cpuScore != 3) {
+                // Any code that you want to run BEFORE each round goes each.
+                // GENERATE SECRET NUMBER 
+                Random rndNum = new Random ();
+                scecretNumber = rndNum.Next(rangeMin, rangeMax);
+                Console.WriteLine(scecretNumber); // REMOVE AFTER TEST!!!!!!!!!!!
+                Console.WriteLine("Player Score: " + playerScore + "\n");
+                Console.WriteLine("CPU Score: " + cpuScore + "\n");
+                // START EACH ROUND 
+                for (int i = 0; i < numberGuesses; i++) {
+                    // Code to guess number goes here. 
+                    Console.WriteLine("Numby has chosen a number between: " + rangeMin + " and " + rangeMax + ". Please select a number betwen these two number ranges.");
+                    Console.WriteLine("You have used " + numAttempts + " this round.\n");
+                    playerGuess = System.Convert.ToInt32(Console.ReadLine());
+                    if (playerGuess == scecretNumber) {
+                        // Print a success message!
+                        Console.WriteLine("Great Job! You guess the correct number from Numby! (SomeHow....). You will receive 1 point!");
+                        playerScore++;
+                        break;
+                    } else {
+                        if (playerGuess > scecretNumber) {
+                            Console.WriteLine("NOPE! Your guess it too high HAHA!");
+                        } else {
+                            Console.WriteLine("NADA! Your are wrong Senor or senorita. It is to Low! LOL!");
+                        }
+                        numAttempts++;
+                    }
+                    if (playerGuess != scecretNumber) {
+                        Console.WriteLine("TO MANY GUESSES! Numby Wins this round! WOOOOO!!");
+                        cpuScore++; 
+                    }
+
+
+                }
+
+            }
+            if (playerScore >= 3) {
+                Console.WriteLine("God dang it. Numby Lost and you won. Great job! Come again next time! Numby Will win for sure!\n");
+            } else {
+                Console.WriteLine("HAHA YOU LOST! NUMBY WINS THE GAME! You can come again and try and beat the great Numby! Good-Bye!\n");
+            }
+
         }
     }   
 }
