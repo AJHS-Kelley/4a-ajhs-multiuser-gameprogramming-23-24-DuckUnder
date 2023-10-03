@@ -1,4 +1,4 @@
-//Amos Rains, 02_Collections, v0.2a
+//Amos Rains, 02_Collections, v0.2b
 using System;
 
 namespace UPDATEFOREACHPROGRAM 
@@ -60,6 +60,14 @@ namespace UPDATEFOREACHPROGRAM
             Console.WriteLine("testScores: " + testScores[testScores.Length - 1]);
             Console.WriteLine("GPA: " + GPA[GPA.Length - 1]);
 
+            // PWYOC -- Pause Write Your Own Code 
+            // v0.2b -- Access the third element in each array and print to the screen. 
+
+            // Accessing Array Elements -- use the index! 
+            Console.WriteLine("The first element in each array is:\n");
+            Console.WriteLine("breakfastFoods: " + breakfastFoods[3]);
+            Console.WriteLine("testScores: " + testScores[3]);
+            Console.WriteLine("GPA: " + GPA[3]);
 
 
         }
