@@ -1,4 +1,4 @@
-//Amos Rains, 02_Collections, v0.1b
+//Amos Rains, 02_Collections, v0.1c
 using System;
 
 namespace UPDATEFOREACHPROGRAM 
@@ -31,6 +31,18 @@ namespace UPDATEFOREACHPROGRAM
             Console.WriteLine();
             Console.WriteLine("GPA: \n" + string.Join(", ", GPA));
             Console.WriteLine();
+
+            /* Print Array Contents -- Each Element on Separate Line 
+            Console.WriteLine("The element for each array are:\n");
+            Console.WriteLine("breakfastFoods: \n" + string.Join("\n", breakfastFoods));
+            Console.WriteLine();
+            Console.WriteLine("testScores: \n" + string.Join("\n", testScores));
+            Console.WriteLine();
+            Console.WriteLine("GPA: \n" + string.Join("\n", GPA));
+            Console.WriteLine();
+            */
+
+
 
 
 
