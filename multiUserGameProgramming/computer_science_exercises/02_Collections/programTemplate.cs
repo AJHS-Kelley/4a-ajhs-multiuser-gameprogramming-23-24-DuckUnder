@@ -1,4 +1,4 @@
-//Amos Rains, 02_Collections, v0.1c
+//Amos Rains, 02_Collections, v0.1d
 using System;
 
 namespace UPDATEFOREACHPROGRAM 
@@ -42,7 +42,11 @@ namespace UPDATEFOREACHPROGRAM
             Console.WriteLine();
             */
 
-
+            // Determining Array Length
+            Console.WriteLine("the Length of each array is:\n");
+            Console.WriteLine("breakfastFoods: " + breakfastFoods.Length);
+            Console.WriteLine("testScores: " + testScores.Length);
+            Console.WriteLine("GPA: " + GPA.Length);
 
 
 
