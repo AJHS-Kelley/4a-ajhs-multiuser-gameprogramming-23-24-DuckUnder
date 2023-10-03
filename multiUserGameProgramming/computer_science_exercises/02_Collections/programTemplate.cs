@@ -1,4 +1,4 @@
-//Amos Rains, 02_Collections, v0.2b
+//Amos Rains, 02_Collections, v0.3a
 using System;
 
 namespace UPDATEFOREACHPROGRAM 
@@ -40,7 +40,7 @@ namespace UPDATEFOREACHPROGRAM
             Console.WriteLine();
             Console.WriteLine("GPA: \n" + string.Join("\n", GPA));
             Console.WriteLine();
-            */
+            
 
             // Determining Array Length
             Console.WriteLine("the Length of each array is:\n");
@@ -68,7 +68,21 @@ namespace UPDATEFOREACHPROGRAM
             Console.WriteLine("breakfastFoods: " + breakfastFoods[3]);
             Console.WriteLine("testScores: " + testScores[3]);
             Console.WriteLine("GPA: " + GPA[3]);
+            */
 
+            // Changing Array Elements -- 
+            breakfastFoods[0] = "Fried Squid";
+            testScores[0] = 59;
+            GPA [0] = 1.34f;
+            Console.WriteLine("The element for each array are:\n");
+            Console.WriteLine("breakfastFoods: \n" + string.Join(", ", breakfastFoods));
+            Console.WriteLine();
+            Console.WriteLine("testScores: \n" + string.Join(", ", testScores));
+            Console.WriteLine();
+            Console.WriteLine("GPA: \n" + string.Join(", ", GPA));
+            Console.WriteLine();
+
+            
 
         }
     }   
