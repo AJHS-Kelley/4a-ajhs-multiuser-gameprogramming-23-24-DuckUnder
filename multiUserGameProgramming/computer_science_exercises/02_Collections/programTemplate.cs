@@ -1,4 +1,4 @@
-//Amos Rains, 02_Collections, v0.3a
+//Amos Rains, 02_Collections, v0.3b
 using System;
 
 namespace UPDATEFOREACHPROGRAM 
@@ -82,7 +82,20 @@ namespace UPDATEFOREACHPROGRAM
             Console.WriteLine("GPA: \n" + string.Join(", ", GPA));
             Console.WriteLine();
 
-            
+            // PWYOC -- Update Fifth Element from Each Array 
+            breakfastFoods[4] = "Air";
+            testScores[4] = 23;
+            GPA [4] = 0.01f;
+            Console.WriteLine("The element for each array are:\n");
+            Console.WriteLine("breakfastFoods: \n" + string.Join(", ", breakfastFoods));
+            Console.WriteLine();
+            Console.WriteLine("testScores: \n" + string.Join(", ", testScores));
+            Console.WriteLine();
+            Console.WriteLine("GPA: \n" + string.Join(", ", GPA));
+            Console.WriteLine();
+
+
+
 
         }
     }   
