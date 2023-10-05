@@ -1,6 +1,8 @@
-//Amos Rains, 02_Collections, v0.5b
+//Amos Rains, 02_Collections, v0.6a
 using System;
 using System.Linq;
+using System.Collections;
+
 namespace UPDATEFOREACHPROGRAM 
 {
     class UPDATEFOREACHPROGRAM
@@ -16,7 +18,7 @@ namespace UPDATEFOREACHPROGRAM
             -- Arrays are ordered, meaning each item has a fixed position. 
             -- The position is knwon as the INDEX.
             -- First element in an array is index 0.
-            */
+            
 
             // Declaring and defining an Array 
             string[] breakfastFoods = {"Bacon", "Waffles", "Pancakes", "Cereal", "Parfait"};
@@ -31,7 +33,8 @@ namespace UPDATEFOREACHPROGRAM
             Console.WriteLine();
             Console.WriteLine("GPA: \n" + string.Join(", ", GPA));
             Console.WriteLine();
-
+            */
+            
             /* Print Array Contents -- Each Element on Separate Line 
             Console.WriteLine("The element for each array are:\n");
             Console.WriteLine("breakfastFoods: \n" + string.Join("\n", breakfastFoods));
@@ -100,8 +103,8 @@ namespace UPDATEFOREACHPROGRAM
             
             // Inncorrect Data type 
             // testScores[0] = "Billy"; // If Possible use the correct Convert.() If not possible, manually change to correct data type. 
-            */
-
+            
+            
             // Common Array Methods - Sort() -- Sorts in alphabetical or numberic order, ascending. 
             int[] newIntArr = {25, -25, 0, -10, 15, 50, -35, 75, -155, 95, -65, 85};
             string[] newStringArr = {"Zebra", "Aardvark", "Emu", "Cow", "Frog", "Platypus", "Gorilla", "Ibis", "Horse"};
@@ -119,7 +122,7 @@ namespace UPDATEFOREACHPROGRAM
             Console.WriteLine();
             Console.WriteLine("newStringArr: \n" + string.Join(", ", newStringArr));
             Console.WriteLine();
-            */ 
+             
 
             // Common Array methods - Min(), Max(), and Sum() 
             Console.WriteLine("The Minimum value for newIntArr is:");
@@ -128,8 +131,31 @@ namespace UPDATEFOREACHPROGRAM
             Console.WriteLine(newIntArr.Max());
             Console.WriteLine("The sum value for newIntArr is:");
             Console.WriteLine(newIntArr.Sum());
+            */
 
-            
+            // Create ArrayList -- array that can have items added/deleted and changed
+            var myArrayList = new ArrayList();
+            // Add items to ArrayList - .Add()
+            myArrayList.Add(5);
+            myArrayList.Add("First Name");
+            myArrayList.Add(true);
+            myArrayList.Add(0.0f);
+
+            Console.WriteLine(myArrayList[0]);
+            Console.WriteLine(myArrayList[1]);
+            Console.WriteLine(myArrayList[2]);
+            Console.WriteLine(myArrayList[3]);
+
+            // Create ArrayList With Values
+            var myArrayList2 = new ArrayList()
+                {
+                    -10, "Last Name", false, 0.25f
+                }; 
+            Console.WriteLine(myArrayList2[0]);
+            Console.WriteLine(myArrayList2[1]);
+            Console.WriteLine(myArrayList2[2]);
+            Console.WriteLine(myArrayList2[3]);
+
 
 
 
