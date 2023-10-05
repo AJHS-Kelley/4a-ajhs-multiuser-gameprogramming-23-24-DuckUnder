@@ -1,4 +1,4 @@
-//Amos Rains, 02_Collections, v0.3b
+//Amos Rains, 02_Collections, v0.4a
 using System;
 
 namespace UPDATEFOREACHPROGRAM 
@@ -93,6 +93,13 @@ namespace UPDATEFOREACHPROGRAM
             Console.WriteLine();
             Console.WriteLine("GPA: \n" + string.Join(", ", GPA));
             Console.WriteLine();
+
+            // Common Bugs working with arrays.
+            // Index Out of Bounds -- Accessing an element that does not exist.
+            // Console.WriteLine(breakfastFoods[4]);
+            
+            // Inncorrect Data type 
+            testScores[0] = "Billy"; // If Possible use the correct Convert.() If not possible, manually change to correct data type. 
 
 
 
