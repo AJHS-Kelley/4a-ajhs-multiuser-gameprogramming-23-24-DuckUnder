@@ -1,6 +1,6 @@
-//Amos Rains, 02_Collections, v0.5a
+//Amos Rains, 02_Collections, v0.5b
 using System;
-
+using System.Linq;
 namespace UPDATEFOREACHPROGRAM 
 {
     class UPDATEFOREACHPROGRAM
@@ -105,6 +105,7 @@ namespace UPDATEFOREACHPROGRAM
             // Common Array Methods - Sort() -- Sorts in alphabetical or numberic order, ascending. 
             int[] newIntArr = {25, -25, 0, -10, 15, 50, -35, 75, -155, 95, -65, 85};
             string[] newStringArr = {"Zebra", "Aardvark", "Emu", "Cow", "Frog", "Platypus", "Gorilla", "Ibis", "Horse"};
+            /*
             Console.WriteLine("The element for each array are:\n");
             Console.WriteLine("newIntArr: \n" + string.Join(", ", newIntArr));
             Console.WriteLine();
@@ -118,6 +119,17 @@ namespace UPDATEFOREACHPROGRAM
             Console.WriteLine();
             Console.WriteLine("newStringArr: \n" + string.Join(", ", newStringArr));
             Console.WriteLine();
+            */ 
+
+            // Common Array methods - Min(), Max(), and Sum() 
+            Console.WriteLine("The Minimum value for newIntArr is:");
+            Console.WriteLine(newIntArr.Min());
+            Console.WriteLine("The Maximum value for newIntArr is:");
+            Console.WriteLine(newIntArr.Max());
+            Console.WriteLine("The sum value for newIntArr is:");
+            Console.WriteLine(newIntArr.Sum());
+
+            
 
 
 
