@@ -1,4 +1,4 @@
-//Amos Rains, 02_Collections, v0.7a
+//Amos Rains, 02_Collections, v0.7a -- Final Version 
 using System;
 using System.Linq;
 using System.Collections;
