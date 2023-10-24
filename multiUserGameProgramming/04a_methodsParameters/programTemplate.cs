@@ -1,4 +1,4 @@
-// Amos Rains, Methods Parameters, v0.2
+// Amos Rains, Methods Parameters, v0.3
 using System;
 
 namespace MethodsParameters
@@ -36,12 +36,18 @@ namespace MethodsParameters
             }
         }
 
+        static void MakeEggs (int num, string style)
+        {
+            Console.WriteLine("You have ordered " + num + " eggs cooked " + style + ".\n");
+            Console.WriteLine("Order coming right UP!!");
+        }
 
         static void Main(string[] args)
         {
             //myMethod();
             //DoubleUp();
-            MakePancakes(10);
+            //MakePancakes(10);
+            MakeEggs(10, "Brunt");
         }
     }   
 }
