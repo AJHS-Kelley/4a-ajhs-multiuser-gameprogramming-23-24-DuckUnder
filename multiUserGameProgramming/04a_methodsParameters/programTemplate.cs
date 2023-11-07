@@ -41,6 +41,7 @@ namespace MethodsParameters
             Console.WriteLine("You have ordered " + num + " eggs cooked " + style + ".\n");
             Console.WriteLine("Order coming right UP!!");
         }
+        
         static void MakeBurger(int num = 1)
         {
             Console.WriteLine("I am to cook " + num + " Hamburgers.\n");
