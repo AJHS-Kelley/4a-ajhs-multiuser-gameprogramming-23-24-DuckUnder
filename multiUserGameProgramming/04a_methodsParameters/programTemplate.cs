@@ -1,4 +1,4 @@
-// Amos Rains, Methods Parameters, v0.4
+// Amos Rains, Methods Parameters, v0.5
 using System;
 
 namespace MethodsParameters
@@ -46,15 +46,40 @@ namespace MethodsParameters
             Console.WriteLine("I am to cook " + num + " Hamburgers.\n");
         }
 
+        // Named Arguments 
+        static void AllMyChildren(string child1, string child2, string child3)
+        {
+            Console.WriteLine("My favorite child is " + child3);
+        }
+
+        // METHOD OVERLOADING
+        static int FindSum(int x, int y)
+        {
+            int sum = x + y;
+            Console.WriteLine("Sum: " + sum);
+            return sum;
+        }
+
+        // Find Sum of Double
+        static double FindSum(double x, double y)
+        {
+            double sum = x + y;
+            Console.WriteLine("Sum: " + sum);
+            return sum;
+        }
 
         static void Main(string[] args)
         {
             //myMethod();
             //DoubleUp();
             //MakePancakes(10);
-            MakeEggs(10, "Brunt");
-            MakeBurger();
-            MakeBurger(10);
+            //MakeEggs(10, "Brunt");
+            //MakeBurger();
+            //MakeBurger(10);
+            //AllMyChildren(child1: "Steve", child2: "Susan", child3: "Chewbacca");
+            FindSum(1, 5);
+            FindSum(9.5, 2.4);
+            FindSum(5, 2.5);
         }
     }   
 }
