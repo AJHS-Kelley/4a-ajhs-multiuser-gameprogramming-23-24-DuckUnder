@@ -22,7 +22,7 @@ namespace exampleGameMethods
 
         static void getBall()
         {
-            string[] passingCallOuts = { "Ball!", "Pass!", "Rock Me!", "Hand Here!" };
+        string[] passingCallOuts = { "Ball!", "Pass!", "Rock Me!", "Hand Here!" };
             if (ballInHands() == false && Array.Exists(passingCallOuts, call => call == Console.ReadLine()))
             {
                 Console.WriteLine("You have finally gotten the ball in your hands. What are you gonna do with it?\n");
