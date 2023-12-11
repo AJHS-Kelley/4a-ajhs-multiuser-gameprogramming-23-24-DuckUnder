@@ -5,16 +5,24 @@ namespace exampleGameMethods
 {
     class exampleGameMethods
     {
-        static string callouts()
+        static string calloutsMethod()
         {
             string[] callouts = {"pass", "ball", "shoot"};
-            bool valid = false
+            bool valid = false;
             string playerCallout = Console.ReadLine().ToLower();
-            while (true)
+            bool commandGot = false;
+            while (commandGot == false)
             {
                 for (int i = 0; i < callouts.length; i++)
                 {
-                    
+                    if (playerCallout == callouts[i])
+                    {
+                        commandGot = true;
+                    } else if (i == callouts.length)
+                    {
+                        Console.WriteLine("That's not a command?? Try again!");
+                        playerCallout = Console.ReadLine().ToLower();
+                    }
                 }
             }
 
