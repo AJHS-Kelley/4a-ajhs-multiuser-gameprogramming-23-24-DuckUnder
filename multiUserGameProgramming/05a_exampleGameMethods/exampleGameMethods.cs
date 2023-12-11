@@ -1,10 +1,27 @@
-// Amos Rains, Example Game Methods, v0.2 (Errors)
+// Amos Rains, Example Game Methods, v0.3
 using System;
 
 namespace exampleGameMethods
 {
     class exampleGameMethods
     {
+        static string callouts()
+        {
+            string[] callouts = {"pass", "ball", "shoot"};
+            bool valid = false
+            string playerCallout = Console.ReadLine().ToLower();
+            while (true)
+            {
+                for (int i = 0; i < callouts.length; i++)
+                {
+                    
+                }
+            }
+
+
+
+            return playerCallout;
+        }
         static bool ballInHands()
         {
             bool playerWithBall = false;
