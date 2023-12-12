@@ -1,6 +1,10 @@
-// Amos Rains, Example Game Methods, v0.3
+// Amos Rains, Example Game Methods, v0.4
 using System;
 using System.Linq;
+
+// This game is about training the player when it comes to handling a basketball in game
+// The game mainly uses 2d8 for each action
+// If the first dice will be compared to the second to determine the success of an action
 
 namespace exampleGameMethods
 {
@@ -26,6 +30,25 @@ namespace exampleGameMethods
         static void passBall()
         {
             
+        }
+        static int rollDice(int diceNum = 4)
+        {
+            // Roll a 1d(diceNum)
+            int num;
+            Random num = new Random();
+            num = rndNum.Next(1, diceNum);
+            Console.WriteLine(num);
+            return num;
+        }
+        static bool compareDice(int num1, int num2)
+        {
+            // If first number is greater than second number, player succeeds
+            bool success = false;
+            if (num1 > num2)
+            {
+                success = true;
+            }
+            return success;
         }
         static bool ballInHands()
         {
@@ -61,14 +84,7 @@ namespace exampleGameMethods
 
         static void Main(string[] args)
         {
-            // getBall();
             commandsMethod();
-            // string test = "pass";
-            // string[] things = {"pass", "lol", "dumb"};
-            // // Console.WriteLine(things.Any(test.Contains));
-            // bool b = things.Any(test.Contains);
-            // Console.WriteLine(b);
-
             while (true)
             {
 
