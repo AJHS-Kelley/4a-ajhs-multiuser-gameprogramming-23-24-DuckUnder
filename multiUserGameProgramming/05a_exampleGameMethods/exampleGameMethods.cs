@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 
 // This game is about training the player when it comes to handling a basketball in game
-// The game mainly uses 2d8 for each action
+// The game mainly uses 2 die for each action
 // If the first dice will be compared to the second to determine the success of an action
 
 namespace exampleGameMethods
@@ -85,6 +85,7 @@ namespace exampleGameMethods
             {
                 Console.WriteLine("\nChoose your command! (ball/pass/shoot/quit).");
                 string playerInput = commandsMethod();
+                // Each big action uses 2 die and if dice 1 with a modifier is greater than dice 2 then it succeeds
                 if (playerInput == "pass")
                 {
                     if (hasBall == true)
@@ -94,6 +95,7 @@ namespace exampleGameMethods
                         playerInput = commandsMethod();
                         if (playerInput == "y")
                         {
+                            // 1d6+2 vs 1d6
                             passBall(compareDice(rollDice(6)+2,rollDice(6)));
                         } else
                         {
@@ -116,7 +118,8 @@ namespace exampleGameMethods
                         playerInput = commandsMethod();
                         if (playerInput == "y")
                         {
-                            hasBall = getBall(compareDice(rollDice(6)+1,rollDice(6)));
+                            // 1d4+1 vs 1d4
+                            hasBall = getBall(compareDice(rollDice(4)+1,rollDice(4)));
                         } else
                         {
                             hasBall = getBall(false);
@@ -131,7 +134,8 @@ namespace exampleGameMethods
                         playerInput = commandsMethod();
                         if (playerInput == "y")
                         {
-                            shootBall(compareDice(rollDice(6),rollDice(6)));
+                            // 1d10 vs 1d10
+                            shootBall(compareDice(rollDice(10),rollDice(10)));
                         } else
                         {
                             shootBall(false);
