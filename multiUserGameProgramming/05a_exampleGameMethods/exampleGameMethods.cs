@@ -1,4 +1,4 @@
-// Amos Rains, Example Game Methods, v0.5
+// Amos Rains, Example Game Methods, v0.6
 using System;
 using System.Linq;
 
@@ -12,7 +12,7 @@ namespace exampleGameMethods
     {
         static string commandsMethod()
         {
-            string[] commands = {"pass", "ball", "shoot", "y", "n", "exit"};
+            string[] commands = {"pass", "ball", "shoot", "y", "n", "quit"};
             string playerInput = Console.ReadLine().ToLower();
             while (true)
             {
@@ -50,59 +50,40 @@ namespace exampleGameMethods
         {
             if (success == true)
             {
-                Console.WriteLine("You passed the ball to your teammate\n You no longer have the ball");
+                Console.WriteLine("You passed the ball to your teammate\nYou no longer have the ball");
             } else
             {
                 Console.WriteLine("You threw the ball too far stupid!!");
             }
         }
-        static void getBall(bool success)
+        static bool getBall(bool success)
         {
             if (success == true)
             {
-                Console.WriteLine("You have finally gotten the ball in your hands. What are you gonna do with it?\n");
+                Console.WriteLine("You have finally gotten the ball in your hands. What are you gonna do with it?");
             } else
             {
                 Console.WriteLine("You missed the catch you idiot! Ask for the ball again!");
             }
+            return success;
         }
-        // static bool ballInHands()
-        // {
-        //     bool playerWithBall = false;
-        //     if (playerWithBall == false)
-        //     {
-        //         Console.WriteLine("You do not have the Basketball in your hands ask for the ball.\n");
-        //         Console.ReadLine();
-        //     }
-        //     else
-        //     {
-        //         Console.WriteLine("You have the ball in your hands what do you want to do with it?\n");
-        //     }
-        //     return playerWithBall;
-        // }
-        // static void getBall()
-        // {
-        // string[] passingCallOuts = { "Ball!", "Pass!", "Rock Me!", "Hand Here!" };
-        //     if (ballInHands() == false && Array.Exists(passingCallOuts, call >= call == Console.ReadLine()))
-        //     {
-        //         Console.WriteLine("You have finally gotten the ball in your hands. What are you gonna do with it?\n");
-        //     }
-        //     else if (ballInHands() == true && Array.Exists(passingCallOuts, call >= call == Console.ReadLine()))
-        //     {
-        //         Console.WriteLine("You already have the ball?? Why are you asking for the Ball you weirdo??");
-        //     }
-        //     else
-        //     {
-        //         Console.WriteLine("What are you waiting for?? DO SOMETHING????");
-        //     }
-        // }
-
+        static void shootBall(bool success)
+        {
+            if (success == true)
+            {
+                Console.WriteLine("You made the shot! You're the GOAT!");
+            } else
+            {
+                Console.WriteLine("You missed the shot you idiot! Ask for the ball again!");
+            }
+        }
         static void Main(string[] args)
         {
             bool hasBall = true;
             // While loop keeps the game going until break
             while (true)
             {
+                Console.WriteLine("\nChoose your command! (ball/pass/shoot/quit).");
                 string playerInput = commandsMethod();
                 if (playerInput == "pass")
                 {
@@ -113,21 +94,21 @@ namespace exampleGameMethods
                         playerInput = commandsMethod();
                         if (playerInput == "y")
                         {
-                            passBall(compareDice(rollDice(6),rollDice(6)));
-                        } else if (playerInput == "n")
+                            passBall(compareDice(rollDice(6)+2,rollDice(6)));
+                        } else
                         {
                             passBall(false);
                         }
                         hasBall = false;
                     } else
                     {
-                        Console.WriteLine("You do not have the Basketball in your hands, ask for the ball.\n");
+                        Console.WriteLine("You do not have the Basketball in your hands, ask for the ball.");
                     }
                 } else if (playerInput == "ball")
                 {
                     if (hasBall == true)
                     {
-                        Console.WriteLine("You already have the ball?? Why are you asking for the Ball you weirdo??\n");
+                        Console.WriteLine("You already have the ball?? Why are you asking for the Ball you weirdo??");
                     } else
                     {
                         Console.WriteLine("Your teammate is about to pass you the ball.");
@@ -135,28 +116,43 @@ namespace exampleGameMethods
                         playerInput = commandsMethod();
                         if (playerInput == "y")
                         {
-                            getBall(compareDice(rollDice(6),rollDice(6)));
-                        } else if (playerInput == "n")
+                            hasBall = getBall(compareDice(rollDice(6)+1,rollDice(6)));
+                        } else
                         {
-                            getBall(false);
+                            hasBall = getBall(false);
+                        }
+                    }
+                } else if (playerInput == "shoot")
+                {
+                    if (hasBall == true)
+                    {
+                        Console.WriteLine("You are about to shoot the ball to the goal.");
+                        Console.WriteLine("Are you ready? (y/n).");
+                        playerInput = commandsMethod();
+                        if (playerInput == "y")
+                        {
+                            shootBall(compareDice(rollDice(6),rollDice(6)));
+                        } else
+                        {
+                            shootBall(false);
                         }
                         hasBall = false;
+                    } else
+                    {
+                        Console.WriteLine("You do not have the Basketball in your hands, ask for the ball.");
                     }
-                } else if (playerInput == "")
+                } else if (playerInput == "y")
                 {
-
-                } else if (playerInput == "")
+                    Console.WriteLine("The heck are you saying yes too???");
+                } else if (playerInput == "n")
                 {
-
-                } else if (playerInput == "")
+                    Console.WriteLine("The heck are you saying no too???");
+                } else if (playerInput == "quit")
                 {
-
-                } else if (playerInput == "")
-                {
-
+                    break;
                 } else
                 {
-                    Console.WriteLine("HOW DID YOU END UP HERE!?!?!?")
+                    Console.WriteLine("HOW DID YOU END UP HERE!?!?!?");
                 }
             }
         }
